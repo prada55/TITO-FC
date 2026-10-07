@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tito Football Club de Gblouville | Académie de football à Abidjan</title>
+<meta name="description" content="TFC-G, académie de formation de football à Abidjan : équipes, matchs, actualités, inscriptions.">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--y:#FBCB1F;--r:#D9232D;--b:#2A6BD1;--bg:#000;--p:#151515;--t:#f2f2f0;--m:#9a9a95;--d:'Montserrat',Arial,sans-serif;--s:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--t);font:400 1rem/1.6 var(--s);overflow-x:hidden}
+img{display:block;max-width:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--y);outline-offset:3px}
+.w{width:min(1180px,92%);margin:auto}
+section{padding:clamp(4rem,9vw,7rem) 0}
+h1,h2,h3{font-family:var(--d);font-weight:900;line-height:.92;text-transform:uppercase}
+h2{font-size:clamp(2.6rem,7vw,5rem);margin-bottom:2rem;overflow:hidden}
+h2 span{display:inline-block;transform:translateY(105%);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+h2.in span{transform:none}
+.stripes{height:8px;background:repeating-linear-gradient(90deg,var(--b) 0 40px,var(--r) 40px 80px)}
+.btn{display:inline-block;background:var(--y);color:#000;font-weight:600;padding:.9rem 1.6rem;border-radius:999px;border:0;cursor:pointer;font:600 1rem var(--s);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 0 var(--r)}
+.btn.o{background:none;color:var(--t);border:2px solid var(--t)}
+header{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,padding .3s;padding:1rem 0}
+header.s{background:rgba(0,0,0,.92);backdrop-filter:blur(8px);padding:.5rem 0}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem;font:900 1.3rem var(--d);text-transform:uppercase}
+.brand img{width:44px;height:44px;object-fit:contain}
+nav{display:flex;gap:1.4rem;font-size:.95rem}
+nav a{position:relative;padding:.3rem 0}
+nav a:after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--y);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav a:hover:after{transform:scaleX(1)}
+#mb{display:none;background:none;border:2px solid var(--t);color:var(--t);border-radius:8px;padding:.4rem .8rem;font:600 .9rem var(--s)}
+.hero{min-height:100svh;display:grid;align-items:end;position:relative;padding:7rem 0 3rem;overflow:hidden}
+.hero .bg{position:absolute;inset:0;background:url(img/equipe.jpeg) center/cover;opacity:0;transform:scale(1.15);animation:bg 1.6s .2s forwards}
+.hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.55),#000 96%),linear-gradient(90deg,#000 15%,transparent 70%)}
+.hero .w{position:relative;z-index:2}
+.hero h1{font-size:clamp(5.2rem,24vw,17rem);display:flex;gap:.08em;overflow:hidden;padding-bottom:.04em}
+.hero h1 i{font-style:normal;display:inline-block;transform:translateY(110%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 i:nth-child(2){animation-delay:.08s}.hero h1 i:nth-child(3){animation-delay:.16s}.hero h1 i:nth-child(4){animation-delay:.24s}.hero h1 i:nth-child(5){animation-delay:.32s}
+.hero h1 i:nth-child(n+4){color:var(--y)}
+.hero .row{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;opacity:0;animation:fade .8s 1s forwards}
+.hero p{max-width:34ch;font-size:1.2rem}
+.hero .acts{display:flex;gap:.8rem;flex-wrap:wrap}
+@keyframes up{to{transform:none}}@keyframes fade{to{opacity:1}}@keyframes bg{to{opacity:.8;transform:scale(1)}}
+.band{background:var(--y);color:#000;overflow:hidden;white-space:nowrap;padding:.7rem 0;font:900 1.6rem var(--d);text-transform:uppercase}
+.band div{display:inline-block;animation:mq 28s linear infinite}
+.band span{margin:0 1.4rem}
+@keyframes mq{to{transform:translateX(-50%)}}
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center}
+.about .ph{position:relative}
+.about .ph img{width:100%;aspect-ratio:4/5;border-radius:4px;clip-path:inset(0 0 0 0)}
+.about .ph:after{content:"";position:absolute;inset:auto -14px -14px auto;width:60%;height:60%;border:3px solid var(--y);z-index:-1}
+.about p{color:var(--m);margin-bottom:1rem;max-width:56ch}
+.pil{display:grid;gap:.8rem;margin-top:1.6rem}
+.pil div{border-left:4px solid var(--y);padding:.2rem 0 .2rem 1rem}
+.pil b{display:block;font:900 1.4rem var(--d);text-transform:uppercase}
+.pil span{color:var(--m);font-size:.95rem}
+.sq{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.pl{position:relative;overflow:hidden;aspect-ratio:3/4;background:var(--p)}
+.pl img{width:100%;height:100%;transition:transform .6s}
+.pl:hover img{transform:scale(1.07)}
+.pl div{position:absolute;inset:auto 0 0;padding:3rem 1rem 1rem;background:linear-gradient(transparent,#000)}
+.pl b{font:900 1.6rem var(--d);text-transform:uppercase;display:block}
+.pl span{color:var(--y);font-size:.9rem}
+.mt{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.card{background:var(--p);padding:1.6rem;border-top:4px solid var(--y)}
+.card h3{font-size:1.8rem;margin-bottom:1rem}
+.nx{display:flex;align-items:center;justify-content:space-between;text-align:center;gap:1rem;margin:1rem 0}
+.nx b{font:900 2rem var(--d);text-transform:uppercase;flex:1}
+.nx em{font:900 2.6rem var(--d);color:var(--y);font-style:normal}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th{color:var(--m);font-weight:500;text-align:left}
+th,td{padding:.55rem .4rem;border-bottom:1px solid #2a2a2a}
+td:first-child,th:first-child{width:2rem}
+tr.me td{color:var(--y);font-weight:600}
+.res li{list-style:none;display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid #2a2a2a}
+.res b{color:var(--y)}
+.note{color:var(--m);font-size:.85rem;margin-top:.8rem}
+.nw{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.nw article img{width:100%;aspect-ratio:16/10;margin-bottom:1rem;transition:filter .4s;filter:grayscale(1)}
+.nw article:hover img{filter:none}
+.nw time{color:var(--y);font-size:.9rem}
+.nw h3{font-size:1.7rem;margin:.3rem 0 .5rem}
+.nw p{color:var(--m);font-size:.95rem}
+.gl{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:240px;gap:.6rem}
+.gl button{border:0;padding:0;background:none;overflow:hidden;cursor:zoom-in}
+.gl button:nth-child(1),.gl button:nth-child(6){grid-row:span 2}
+.gl img{width:100%;height:100%;transition:transform .6s}
+.gl button:hover img{transform:scale(1.08)}
+dialog{border:0;background:none;max-width:94vw;max-height:94vh;padding:0}
+dialog::backdrop{background:rgba(0,0,0,.9)}
+dialog img{max-height:90vh;margin:auto;border-radius:4px}
+.ct{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem}
+.ct address{font-style:normal;color:var(--m);display:grid;gap:1rem;margin:1.5rem 0}
+.ct address b{color:var(--t);display:block}
+form{display:grid;gap:1rem}
+label{display:grid;gap:.3rem;font-size:.9rem;color:var(--m)}
+input,select,textarea{background:var(--p);border:1px solid #333;border-radius:8px;color:var(--t);padding:.8rem;font:1rem var(--s);width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--y);outline:none}
+.hp{position:absolute;left:-9999px}
+#ok{color:var(--y);min-height:1.5em}
+footer{border-top:1px solid #222;padding:2rem 0;color:var(--m);font-size:.9rem}
+footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.wa{position:fixed;right:1.2rem;bottom:1.2rem;z-index:30;background:#25D366;color:#000;font-weight:600;padding:.8rem 1.2rem;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.5);transition:transform .25s}
+.wa:hover{transform:scale(1.06)}
+@media(max-width:860px){
+nav{display:none;position:absolute;top:100%;left:0;right:0;background:#000;flex-direction:column;padding:1rem 4%;gap:.8rem}
+nav.o{display:flex}#mb{display:block}
+.about,.mt,.ct{grid-template-columns:1fr}
+.sq{grid-template-columns:1fr 1fr}.nw{grid-template-columns:1fr}.gl{grid-template-columns:1fr 1fr;grid-auto-rows:200px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 i,.hero .row,.hero .bg{transform:none;opacity:1}h2 span{transform:none}.hero .bg{opacity:.8}}
+</style>
+</head>
+<body>
+<header id="hd"><div class="w">
+<a class="brand" href="#accueil"><img src="img/logo.png" alt="Logo TFC-G">Tito FC</a>
+<button id="mb" aria-expanded="false" aria-controls="nv">Menu</button>
+<nav id="nv" aria-label="Navigation principale">
+<a href="#academie">Académie</a><a href="#effectif">Effectif</a><a href="#matchs">Matchs</a><a href="#actus">Actualités</a><a href="#galerie">Galerie</a><a href="#contact">Contact</a>
+</nav></div></header>
+
+<main>
+<section class="hero" id="accueil">
+<div class="bg" role="img" aria-label="Joueur de Tito FC en match"></div>
+<div class="w">
+<h1 aria-label="Tito FC"><i>T</i><i>I</i><i>T</i><i>O</i><i>FC</i></h1>
+<div class="row">
+<p>Académie de formation de Gblouville. On forme des joueurs, sur le terrain et dans le comportement.</p>
+<div class="acts"><a class="btn" href="#contact">Inscrire un joueur</a><a class="btn o" href="#matchs">Voir les matchs</a></div>
+</div></div>
+</section>
+<div class="stripes"></div>
+<div class="band" aria-hidden="true"><div>
+<span>Formation</span><span>Discipline</span><span>Esprit d'équipe</span><span>Progression</span><span>Formation</span><span>Discipline</span><span>Esprit d'équipe</span><span>Progression</span><span>Formation</span><span>Discipline</span><span>Esprit d'équipe</span><span>Progression</span><span>Formation</span><span>Discipline</span><span>Esprit d'équipe</span><span>Progression</span>
+</div></div>
+
+<section id="academie"><div class="w about">
+<div class="ph"><img src="img/groupe.jpg" alt="Les joueurs de Tito FC réunis avant un match" loading="lazy"></div>
+<div>
+<h2><span>L'académie</span></h2>
+<p>Tito Football Club de Gblouville (TFC-G) accueille des jeunes joueurs qui veulent progresser. Chaque séance travaille la technique, la condition physique et la vie de groupe.</p>
+<p>Les joueurs s'entraînent toute la semaine et jouent des matchs réguliers pour appliquer ce qu'ils apprennent.</p>
+<div class="pil">
+<div><b>Formation technique</b><span>Maîtrise du ballon, passes, placement et lecture du jeu.</span></div>
+<div><b>Suivi des joueurs</b><span>Les coachs suivent la progression de chacun.</span></div>
+<div><b>Compétition</b><span>Des matchs pour jouer sous pression et progresser.</span></div>
+</div></div></div></section>
+
+<section id="effectif" style="background:var(--p)"><div class="w">
+<h2><span>L'effectif</span></h2>
+<div class="sq">
+<article class="pl"><img src="img/coach.jpg" alt="Le coach sur le terrain" loading="lazy"><div><b>BAMBA Youssoufou</b><span>Entraîneur</span></div></article>
+<article class="pl"><img src="img/joueur.png" alt="Joueur numéro 4" loading="lazy"><div><b>MEITE Ismael</b><span>Défenseur central/G-D</span></div></article>
+<article class="pl"><img src="img/KAMARA.jpeg" alt="Joueur numéro 20 en dribble" loading="lazy"><div><b>KAMARA Ibrahim</b><span>Milieu défensif</span></div></article>
+<article class="pl"><img src="img/training.png" alt="Joueur numéro 9 à l'échauffement" loading="lazy"><div><b>BINI Kouakou</b><span>Ailier droit</span></div></article>
+</div></div></section>
+
+<section id="matchs"><div class="w">
+<h2><span>Matchs et classement</span></h2>
+<div class="mt">
+<div>
+<div class="card"><h3>Prochain match</h3>
+<div class="nx"><b>TFC-G</b><em>VS</em><b>Adversaire</b></div>
+<p class="note">.</p></div>
+<div class="card" style="margin-top:1.5rem"><h3>Derniers résultats</h3>
+<ul class="res"><li>TFC-G contre Équipe A <b>0 - 0</b></li><li>Équipe B contre TFC-G <b>0 - 0</b></li><li>TFC-G contre Équipe C <b>0 - 0</b></li></ul></div>
+</div>
+<div class="card"><h3>Classement</h3>
+<table><thead><tr><th>#</th><th>Équipe</th><th>J</th><th>Pts</th></tr></thead><tbody>
+<tr class="me"><td>1</td><td>TFC-G</td><td>0</td><td>0</td></tr>
+<tr><td>2</td><td>Équipe A</td><td>0</td><td>0</td></tr>
+<tr><td>3</td><td>Équipe B</td><td>0</td><td>0</td></tr>
+<tr><td>4</td><td>Équipe C</td><td>0</td><td>0</td></tr>
+<tr><td>5</td><td>Équipe D</td><td>0</td><td>0</td></tr></tbody></table>
+<p class="note">.</p></div>
+</div></div></section>
+
+<section id="actus" style="background:var(--p)"><div class="w">
+<h2><span>Actualités</span></h2>
+<div class="nw">
+<article><img src="img/echauffement.jpg" alt="Échauffement de l'équipe" loading="lazy"><time>Date à renseigner</time><h3>Titre de l'actualité</h3><p>Résumé en deux phrases de l'actualité du club.</p></article>
+<article><img src="img/match.jpg" alt="Joueur en match" loading="lazy"><time>Date à renseigner</time><h3>Résumé du dernier match</h3><p>Score, buteurs et ce qu'il faut retenir de la rencontre.</p></article>
+<article><img src="img/passe.jpg" alt="Joueur à la passe" loading="lazy"><time>Date à renseigner</time><h3>Inscriptions ouvertes</h3><p>Comment inscrire un joueur et quelles informations fournir.</p></article>
+</div></div></section>
+
+<section id="galerie"><div class="w">
+<h2><span>Galerie</span></h2>
+<div class="gl">
+<button data-i="img/dribble.jpg"><img src="img/dribble.jpg" alt="Dribble en match" loading="lazy"></button>
+<button data-i="img/echauffement.jpg"><img src="img/echauffement.jpg" alt="Échauffement" loading="lazy"></button>
+<button data-i="img/groupe.jpg"><img src="img/groupe.jpg" alt="Causerie d'avant-match" loading="lazy"></button>
+<button data-i="img/match.jpg"><img src="img/match.jpg" alt="Action de jeu" loading="lazy"></button>
+<button data-i="img/dos.jpg"><img src="img/dos.jpg" alt="Joueur de dos" loading="lazy"></button>
+<button data-i="img/training.png"><img src="img/training.png" alt="Entraînement" loading="lazy"></button>
+</div></div></section>
+
+<div class="stripes"></div>
+<section id="contact"><div class="w ct">
+<div>
+<h2><span>Contact</span></h2>
+<p style="color:var(--m);max-width:40ch">Pour inscrire un joueur, devenir partenaire ou poser une question, écrivez-nous. Nous répondons par email ou sur WhatsApp.</p>
+<address>
+<div><b>Adresse</b>Rue derrière collège André Malraux, Résidence ANDEE, Appart A7, Abidjan, Côte d'Ivoire</div>
+<div><b>Email</b><a href="mailto:titofc797@gmail.com">titofc797@gmail.com</a></div>
+<div><b>WhatsApp</b>+225 07 10 83 64 93</div>
+</address>
+<a class="btn" href="https://wa.me/2250710836493?text=Bonjour%20Tito%20FC%2C%20je%20voudrais%20des%20informations." target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+</div>
+<form id="f" method="POST">
+<p class="hp" aria-hidden="true"><label>Ne pas remplir <input name="website" tabindex="-1" autocomplete="off"></label></p>
+<label>Nom complet<input name="nom" required maxlength="80" autocomplete="name"></label>
+<label>Téléphone<input name="telephone" type="tel" required maxlength="25" autocomplete="tel"></label>
+<label>Email<input name="email" type="email" maxlength="120" autocomplete="email"></label>
+<label>Objet<select name="objet"><option>Inscription d'un joueur</option><option>Partenariat</option><option>Autre demande</option></select></label>
+<label>Message<textarea name="message" rows="5" required maxlength="1500"></textarea></label>
+<button class="btn" type="submit">Envoyer le message</button>
+<p id="ok" role="status"></p>
+</form></div></section>
+</main>
+
+<footer><div class="w"><span>© 2026 Tito Football Club de Gblouville</span><span>Abidjan, Côte d'Ivoire</span></div></footer>
+<a class="wa" href="https://wa.me/2250710836493?text=Bonjour%20Tito%20FC%2C%20je%20voudrais%20des%20informations." target="_blank" rel="noopener">WhatsApp</a>
+<dialog id="lb"><img alt=""></dialog>
+
+<script>
+const hd=document.getElementById('hd'),nv=document.getElementById('nv'),mb=document.getElementById('mb');
+addEventListener('scroll',()=>hd.classList.toggle('s',scrollY>40),{passive:true});
+mb.onclick=()=>{const o=nv.classList.toggle('o');mb.setAttribute('aria-expanded',o)};
+nv.onclick=()=>{nv.classList.remove('o');mb.setAttribute('aria-expanded',false)};
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.4});
+document.querySelectorAll('h2').forEach(h=>io.observe(h));
+const lb=document.getElementById('lb'),li=lb.querySelector('img');
+document.querySelectorAll('.gl button').forEach(b=>b.onclick=()=>{li.src=b.dataset.i;li.alt=b.querySelector('img').alt;lb.showModal()});
+lb.onclick=()=>lb.close();
+const f=document.getElementById('f'),ok=document.getElementById('ok');
+f.onsubmit=async e=>{
+e.preventDefault();
+const btn=f.querySelector('button[type=submit]');
+btn.disabled=true;ok.textContent='Envoi en cours...';
+try{
+const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+if(!r.ok)throw 0;
+f.reset();ok.textContent='Message envoyé. Nous vous répondons rapidement.';
+}catch{ok.textContent='Envoi impossible. Écrivez-nous sur WhatsApp ou par email.'}
+finally{btn.disabled=false}
+};
+</script>
+</body>
+</html>
